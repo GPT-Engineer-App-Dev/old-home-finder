@@ -1,15 +1,42 @@
-// Complete the Index page component here
-// Use chakra-ui
-import { Button } from "@chakra-ui/react"; // example
-import { FaPlus } from "react-icons/fa"; // example - use react-icons/fa for icons
+import { Box, Flex, Heading, Input, Button, Text, VStack, HStack, Image } from '@chakra-ui/react';
+import { FaSearch, FaSun, FaThermometerHalf, FaLeaf } from 'react-icons/fa';
 
 const Index = () => {
-  // TODO: Create the website here!
   return (
-    <Button>
-      Hello world! <FaPlus />
-    </Button>
-  ); // example
+    <Box p={5}>
+      <Flex justifyContent="center" alignItems="center" flexDirection="column">
+        <Heading mb={4}>Renovate Heritage</Heading>
+        <Text fontSize="lg" mb={2}>Find and transform old flats and houses into modern eco-friendly homes.</Text>
+        <Input placeholder="Search for properties..." size="lg" mb={3} />
+        <Button leftIcon={<FaSearch />} colorScheme="teal" size="lg" mb={6}>
+          Search
+        </Button>
+        <VStack spacing={4} align="stretch">
+          <Box p={5} shadow="md" borderWidth="1px">
+            <Heading fontSize="xl">Available Properties</Heading>
+            <Text mt={4}>Explore listings of properties that are waiting to be transformed.</Text>
+          </Box>
+          <Box p={5} shadow="md" borderWidth="1px">
+            <Heading fontSize="xl">Integration of New Technologies</Heading>
+            <HStack spacing={10} mt={4}>
+              <Box textAlign="center">
+                <FaSun size="3em" />
+                <Text mt={2}>Solar Panels</Text>
+              </Box>
+              <Box textAlign="center">
+                <FaThermometerHalf size="3em" />
+                <Text mt={2}>Heat Pumps</Text>
+              </Box>
+              <Box textAlign="center">
+                <FaLeaf size="3em" />
+                <Text mt={2}>Eco-friendly Insulation</Text>
+              </Box>
+            </HStack>
+          </Box>
+        </VStack>
+      </Flex>
+    </Box>
+  );
 };
 
 export default Index;
